@@ -9,9 +9,25 @@ import Error_85 from './pages/Error_85'
 import Navbar_85 from './components/Navbar_85'
 function App_85() {
   return (
-    <div>
-      <h2>app component</h2>
-    </div>
+    
+    <Router>
+      <Navbar_85 />
+      <Switch>
+        <Route exact path='/'>
+          <Home_85 />
+        </Route>
+        <Route path="/about">
+          <About_85 />
+        </Route>
+        <Route path="/cocktail/:id">
+          <SingleCocktail_85 />
+        </Route>
+        <Route path="*">
+          <Error_85 />
+        </Route>
+      </Switch>
+    </Router>
+
   )
 }
 
